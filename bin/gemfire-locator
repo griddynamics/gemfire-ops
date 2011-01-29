@@ -4,8 +4,10 @@
 # description: Manages the Gemfire locator service
 ###
 
-BIN=`dirname $0`;BASE=`dirname $BIN`
-echo $ME
+OLDPWD=$PWD
+cd `dirname $0`
+BIN=`pwd`;BASE=`dirname $BIN`
+cd $OLDPWD
 
 source $BASE/bin/common.sh
 source $BASE/bin/setenv.sh

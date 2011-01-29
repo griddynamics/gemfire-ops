@@ -6,11 +6,11 @@
 TAG=dev
 
 SERVER_PORT=10401
-SERVER_LOG=../logs/cacheserver.log 					# relative to GEMFIRE_WORK
-SERVER_PROP_FILE=$BASE/conf/gemfire.properties 		# relative to CWD
+SERVER_LOG=$BASE/logs/cacheserver.log
+SERVER_PROP_FILE=$BASE/conf/gemfire.properties
 SERVER_MEM=6G
-SERVER_CACHE_FILE=../conf/cache.xml
+SERVER_CACHE_FILE=$BASE/conf/cache.xml
 
 LOCATOR_PORT=10301
-LOCATOR_LOG=../logs/locator.log
+LOCATOR_LOG=$BASE/logs/locator.log
 LOCATOR_PROP_FILE=$BASE/conf/gemfire.properties
