@@ -1,0 +1,35 @@
+#!/bin/bash
+###
+# chkconfig: 235 98 55
+# description: Manages the Gemfire cacheserver service
+###
+
+BIN=`dirname $0`;BASE=`dirname $BIN`
+
+source $BASE/bin/common.sh
+source $BASE/bin/setenv.sh
+
+case "$1" in
+  start)
+        echo "Starting $TAG gemfire server"
+        $GEMFIRE/bin/cacheserver start \
+			-J-Xms$SERVER_MEM -J-Xmx$SERVER_MEM \
+			-J-DgemfirePropertyFile=$SERVER_PROP_FILE \
+			-J-Dgemfire.log-file=$SERVER_LOG \
+			-J-Dgemfire.cache-xml-file=$SERVER_CACHE_FILE \
+			-J-Denv=$TAG \
+ 			-dir=$GEMFIRE_WORK -server-port=$SERVER_PORT \
+			-classpath=$CLASSPATH
+        ;;
+  stop)
+        echo "Stopping $TAG gemfire server"
+        $GEMFIRE/bin/cacheserver stop \
+			-dir=$GEMFIRE_WORK
+        ;;
+
+  *)
+        echo "Usage: /sbin/service gemfire-server {start|stop}"
+        exit 1
+esac
+
+exit 0

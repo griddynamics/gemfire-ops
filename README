@@ -1,0 +1,11 @@
+This is a set of template scripts to operate Gemfire installation.
+
+bin/gemfire-server and bin/gemfire-locator are legitimate init.d scripts.
+
+Tested on Gemfire 6.5.
+
+TODO:
+— support for Grails
+– support for Gemfire JMX agent
+— absolute paths where possible
+– support for upstart?
