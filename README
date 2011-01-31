@@ -4,7 +4,9 @@ bin/gemfire-server and bin/gemfire-locator are legitimate init.d scripts.
 
 Tested on Gemfire 6.5.
 
+ISSUES:
+– Configuration files refer to non-existent auth implementations
+
 TODO:
-— support for Grails
 – support for Gemfire JMX agent
 – support for upstart?

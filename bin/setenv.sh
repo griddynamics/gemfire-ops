@@ -9,8 +9,13 @@ SERVER_PORT=10401
 SERVER_LOG=$BASE/logs/cacheserver.log
 SERVER_PROP_FILE=$BASE/conf/gemfire.properties
 SERVER_MEM=6G
-SERVER_CACHE_FILE=$BASE/conf/cache.xml
+SERVER_CACHE_FILE=$BASE/app/cache.xml
 
 LOCATOR_PORT=10301
 LOCATOR_LOG=$BASE/logs/locator.log
 LOCATOR_PROP_FILE=$BASE/conf/gemfire.properties
+
+AGENT_HTTP_PORT=8080
+AGENT_RMI_PORT=1099
+AGENT_LOG=$BASE/logs/locator.log
+AGENT_PROP_FILE=$BASE/conf/gemfire.properties
