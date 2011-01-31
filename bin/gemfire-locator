@@ -23,7 +23,7 @@ case "$1" in
 			-Denv=$TAG
         ;;
   stop)
-        echo "Stopping $TAG gemfire locators"
+        echo "Stopping $TAG gemfire locator"
         $GEMFIRE/bin/gemfire stop-locator \
 			-dir=$GEMFIRE_WORK -port=$LOCATOR_PORT
         ;;
