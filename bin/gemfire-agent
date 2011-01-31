@@ -1,0 +1,38 @@
+#!/bin/bash
+###
+# chkconfig: 235 98 55
+# description: Manages the Gemfire JMX agent service
+###
+
+OLDPWD=$PWD
+cd `dirname $0`
+BIN=`pwd`;BASE=`dirname $BIN`
+cd $OLDPWD
+
+source $BASE/bin/common.sh
+source $BASE/bin/setenv.sh
+
+case "$1" in
+  start)
+        echo "Starting $TAG gemfire agent"
+		export CLASSPATH
+        $GEMFIRE/bin/agent start \
+			-dir=$GEMFIRE_WORK \
+			http-port=$AGENT_HTTP_PORT \
+			rmi-port=$AGENT_RMI_PORT \
+			property-file=$AGENT_PROP_FILE \
+			log-file=$AGENT_LOG \
+			-J-Denv=$TAG
+        ;;
+  stop)
+        echo "Stopping $TAG gemfire agent"
+        $GEMFIRE/bin/agent stop \
+			-dir=$GEMFIRE_WORK
+        ;;
+
+  *)
+        echo "Usage: /sbin/service gemfire-agent {start|stop}"
+        exit 1
+esac
+
+exit 0
