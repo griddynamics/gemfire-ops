@@ -6,6 +6,7 @@ Tested on Gemfire 6.5.
 
 ISSUES:
 – Configuration files refer to non-existent auth implementations
+– probably does not play well with Hyperic...
 
 TODO:
 – support for Gemfire JMX agent
