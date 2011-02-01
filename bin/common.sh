@@ -3,18 +3,15 @@
 # description: Settings that are common for all Gemfire services
 ###
 
-GEMFIRE=/opt/gemfire/GemFire651
+source $BASE/conf/setenv.sh
+
 GEMFIRE_WORK=$BASE/work
 
-# Groovy support
-GROOVY_LIB_PATH=/opt/local/share/java/groovy/lib
-GROOVY_FILES=$GROOVY_LIB_PATH/groovy-1.7.6.jar:$GROOVY_LIB_PATH/asm-3.2.jar
-
 # App classes
-APP_CLASSES=$BASE/app/classes
+APP_CLASSES=$BASE/app/classes:$APP_JARS
 
 # Authentication support
 # TODO: iterate and grab everything in lib
 SECURITY_FILES=$BASE/lib/ca-security.jar
 
-CLASSPATH=$GRAILS_TARGET_CLASSES:$SECURITY_FILES:$GROOVY_FILES:$CLASSPATH
+CLASSPATH=$APP_CLASSES:$SECURITY_FILES:$GROOVY_FILES:$CLASSPATH

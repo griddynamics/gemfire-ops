@@ -10,7 +10,6 @@ BIN=`pwd`;BASE=`dirname $BIN`
 cd $OLDPWD
 
 source $BASE/bin/common.sh
-source $BASE/bin/setenv.sh
 
 case "$1" in
   start)
