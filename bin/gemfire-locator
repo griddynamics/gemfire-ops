@@ -1,6 +1,6 @@
 #!/bin/bash
 ###
-# chkconfig: 235 98 55
+# chkconfig: 235 97 56
 # description: Manages the Gemfire locator service
 ###
 
