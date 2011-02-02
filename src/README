@@ -1,0 +1,5 @@
+Baseline authentication implementation — a base minimum for any production installation.
+
+Note that I've only made sure the classes compile after refactoring and did not test whether they actually work.
+
+You should place the generated classes in the lib/security.jar.
