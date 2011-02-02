@@ -5,8 +5,8 @@ bin/gemfire-server and bin/gemfire-locator are legitimate init.d scripts.
 Tested on Gemfire 6.5.
 
 ISSUES:
-– configuration files refer to non-existent auth implementations
 – probably does not play well with Hyperic...
 
 TODO:
+– install script to compile jar and setup init.d
 – support for upstart?
